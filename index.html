@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alen Peter | QA/QC Professional Portfolio</title>
+    <meta name="description" content="Portfolio of Alen Peter — QA/QC Assistant specializing in P&ID verification, SATIP compliance, and Functional Checkout Testing for the oil & gas industry.">
+    <meta name="keywords" content="QA/QC, Quality Assurance, Quality Control, Saudi Aramco, SATIP, P&ID, FCT, Oil and Gas, Inspector">
+    <meta name="author" content="Alen Peter">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 3D Grid Background Canvas -->
+    <canvas id="grid-canvas"></canvas>
+
+    <!-- Ambient Floating Particles -->
+    <div id="particles-container" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo" id="nav-logo">
+                <span class="logo-text">AP</span>
+                <span class="logo-dot"></span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link active" id="nav-link-hero">Home</a>
+                <a href="#work-history" class="nav-link" id="nav-link-work">Experience</a>
+                <a href="#expertise" class="nav-link" id="nav-link-skills">Skills</a>
+                <a href="#education" class="nav-link" id="nav-link-edu">Education</a>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle between light and dark theme">
+                <div class="toggle-track">
+                    <span class="toggle-icon icon-sun" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </span>
+                    <span class="toggle-icon icon-moon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </span>
+                    <div class="toggle-thumb"></div>
+                </div>
+            </button>
+            <!-- Hamburger Button (mobile only) -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">Menu</span>
+            <button class="drawer-close" id="drawer-close" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="drawer-links">
+            <a href="#hero" class="drawer-link" id="drawer-link-hero">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Home</span>
+            </a>
+            <a href="#work-history" class="drawer-link" id="drawer-link-work">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span>Experience</span>
+            </a>
+            <a href="#expertise" class="drawer-link" id="drawer-link-skills">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Skills</span>
+            </a>
+            <a href="#education" class="drawer-link" id="drawer-link-edu">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+                <span>Education</span>
+            </a>
+        </div>
+        <div class="drawer-divider"></div>
+        <div class="drawer-theme">
+            <span class="drawer-theme-label">Theme</span>
+            <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle theme">
+                <div class="toggle-track">
+                    <span class="toggle-icon icon-sun" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </span>
+                    <span class="toggle-icon icon-moon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </span>
+                    <div class="toggle-thumb"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="section hero-section">
+        <div class="hero-content floating-island float-anim-1">
+            <div class="profile-container" id="profile-container">
+                <div class="profile-glow-ring"></div>
+                <div class="profile-glow-ring ring-2"></div>
+                <div class="profile-border">
+                    <img src="assets/profile.png" alt="Alen Peter — QA/QC Professional" class="profile-photo" id="profile-photo" loading="eager">
+                </div>
+            </div>
+            <div class="hero-text">
+                <p class="hero-greeting" id="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name" id="hero-name">Alen Peter</h1>
+                <div class="hero-title-container">
+                    <span class="hero-title-line"></span>
+                    <h2 class="hero-title" id="hero-title">QA/QC Assistant</h2>
+                    <span class="hero-title-line"></span>
+                </div>
+                <p class="hero-description" id="hero-description">
+                    Ensuring excellence in quality assurance &amp; quality control
+                    across oil &amp; gas mega-projects. Specialized in SATIP compliance,
+                    P&amp;ID verification, and functional checkout testing.
+                </p>
+                <div class="hero-cta">
+                    <a href="#work-history" class="btn btn-primary" id="btn-explore">
+                        <span>Explore My Work</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                    </a>
+                    <a href="#expertise" class="btn btn-ghost" id="btn-skills">
+                        <span>View Skills</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" id="scroll-indicator">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- ==================== WORK HISTORY ISLAND ==================== -->
+    <section id="work-history" class="section">
+        <div class="section-header floating-island float-anim-2 reveal">
+            <span class="section-tag">Experience</span>
+            <h2 class="section-title">Work History</h2>
+            <p class="section-subtitle">Professional journey in QA/QC across major oil &amp; gas projects</p>
+        </div>
+
+        <div class="experience-grid">
+            <!-- Saudi Aramco Card -->
+            <div class="experience-card floating-island float-anim-3 physics-card reveal" id="card-aramco">
+                <div class="card-accent"></div>
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20"/><path d="M4 20V8l8-5 8 5v12"/><path d="M9 20v-6h6v6"/><circle cx="9" cy="12" r="0.5" fill="currentColor"/><circle cx="15" cy="12" r="0.5" fill="currentColor"/></svg>
+                    </div>
+                    <div class="card-meta">
+                        <span class="card-date">2022 — Present</span>
+                        <span class="card-badge">Current</span>
+                    </div>
+                </div>
+                <h3 class="card-title">Saudi Aramco</h3>
+                <p class="card-role">QA/QC Inspector — Piping &amp; Instrumentation</p>
+                <ul class="card-details">
+                    <li>Conducted comprehensive QA/QC inspections on piping systems, pressure vessels, and instrumentation installations across mega-projects.</li>
+                    <li>Verified P&amp;ID accuracy against field installations, ensuring compliance with Saudi Aramco engineering standards (SAES/SAEP).</li>
+                    <li>Executed SATIP-based inspection protocols for welding, hydrostatic testing, and material traceability.</li>
+                    <li>Coordinated pre-commissioning and commissioning activities including loop checking and FCT procedures.</li>
+                    <li>Managed inspection release notices (IRN) and non-conformance reports (NCR) via SAP and EDMS platforms.</li>
+                </ul>
+                <div class="card-tags">
+                    <span class="tag">SATIP</span>
+                    <span class="tag">P&amp;ID</span>
+                    <span class="tag">FCT</span>
+                    <span class="tag">SAES</span>
+                    <span class="tag">NDT</span>
+                </div>
+            </div>
+
+            <!-- NEST SFO Card -->
+            <div class="experience-card floating-island float-anim-4 physics-card reveal" id="card-nest">
+                <div class="card-accent accent-secondary"></div>
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="10" y1="3" x2="10" y2="21"/></svg>
+                    </div>
+                    <div class="card-meta">
+                        <span class="card-date">2020 — 2022</span>
+                    </div>
+                </div>
+                <h3 class="card-title">NEST SFO</h3>
+                <p class="card-role">QA/QC Assistant — Document Control &amp; Inspection</p>
+                <ul class="card-details">
+                    <li>Assisted senior QA/QC engineers in daily inspection activities for piping fabrication and erection works.</li>
+                    <li>Maintained and organized quality documentation including ITPs, method statements, and material certificates.</li>
+                    <li>Tracked inspection schedules and ensured timely completion of quality milestones aligned with project master plans.</li>
+                    <li>Prepared and processed inspection requests, material receiving reports, and test certificates.</li>
+                    <li>Supported construction quality audits and surveillance activities per ISO 9001 requirements.</li>
+                </ul>
+                <div class="card-tags">
+                    <span class="tag">ITP</span>
+                    <span class="tag">ISO 9001</span>
+                    <span class="tag">Doc Control</span>
+                    <span class="tag">Auditing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TECHNICAL EXPERTISE ISLAND ==================== -->
+    <section id="expertise" class="section">
+        <div class="section-header floating-island float-anim-2 reveal">
+            <span class="section-tag">Skills</span>
+            <h2 class="section-title">Technical Expertise</h2>
+            <p class="section-subtitle">Core competencies in oil &amp; gas quality management</p>
+        </div>
+
+        <div class="skills-container">
+            <!-- Core QA/QC -->
+            <div class="skill-category floating-island float-anim-3 physics-card reveal" id="skill-core">
+                <h3 class="skill-category-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Core QA/QC
+                </h3>
+                <div class="skill-chips">
+                    <div class="skill-chip physics-chip" data-level="expert"><span class="chip-dot"></span>P&amp;ID Verification</div>
+                    <div class="skill-chip physics-chip" data-level="expert"><span class="chip-dot"></span>SATIP Compliance</div>
+                    <div class="skill-chip physics-chip" data-level="expert"><span class="chip-dot"></span>FCT (Functional Checkout)</div>
+                    <div class="skill-chip physics-chip" data-level="advanced"><span class="chip-dot"></span>Hydrostatic Testing</div>
+                    <div class="skill-chip physics-chip" data-level="advanced"><span class="chip-dot"></span>Welding Inspection</div>
+                    <div class="skill-chip physics-chip" data-level="advanced"><span class="chip-dot"></span>NDT Coordination</div>
+                </div>
+            </div>
+
+            <!-- Standards & Codes -->
+            <div class="skill-category floating-island float-anim-4 physics-card reveal" id="skill-standards">
+                <h3 class="skill-category-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    Standards &amp; Codes
+                </h3>
+                <div class="skill-chips">
+                    <div class="skill-chip physics-chip" data-level="expert"><span class="chip-dot"></span>SAES / SAEP</div>
+                    <div class="skill-chip physics-chip" data-level="expert"><span class="chip-dot"></span>ASME B31.3</div>
+                    <div class="skill-chip physics-chip" data-level="advanced"><span class="chip-dot"></span>API Standards</div>
+                    <div class="skill-chip physics-chip" data-level="advanced"><span class="chip-dot"></span>ISO 9001</div>
+                    <div class="skill-chip physics-chip" data-level="intermediate"><span class="chip-dot"></span>AWS D1.1</div>
+                    <div class="skill-chip physics-chip" data-level="intermediate"><span class="chip-dot"></span>NACE Standards</div>
+                </div>
+            </div>
+
+            <!-- Tools & Software -->
+            <div class="skill-category floating-island float-anim-5 physics-card reveal" id="skill-tools">
+                <h3 class="skill-category-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    Tools &amp; Software
+                </h3>
+                <div class="skill-chips">
+                    <div class="skill-chip physics-chip" data-level="expert"><span class="chip-dot"></span>SAP PM</div>
+                    <div class="skill-chip physics-chip" data-level="advanced"><span class="chip-dot"></span>EDMS</div>
+                    <div class="skill-chip physics-chip" data-level="advanced"><span class="chip-dot"></span>AutoCAD</div>
+                    <div class="skill-chip physics-chip" data-level="intermediate"><span class="chip-dot"></span>MS Office Suite</div>
+                    <div class="skill-chip physics-chip" data-level="intermediate"><span class="chip-dot"></span>Primavera P6</div>
+                    <div class="skill-chip physics-chip" data-level="intermediate"><span class="chip-dot"></span>Aconex</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EDUCATION ISLAND ==================== -->
+    <section id="education" class="section">
+        <div class="section-header floating-island float-anim-2 reveal">
+            <span class="section-tag">Education</span>
+            <h2 class="section-title">Academic Background</h2>
+            <p class="section-subtitle">Foundation of engineering excellence</p>
+        </div>
+
+        <div class="education-grid">
+            <!-- Degree Card -->
+            <div class="education-card floating-island float-anim-3 physics-card reveal" id="card-degree">
+                <div class="card-accent"></div>
+                <div class="edu-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+                </div>
+                <h3 class="edu-degree">Bachelor of Technology</h3>
+                <p class="edu-field">Mechanical Engineering</p>
+                <p class="edu-school">APJ Abdul Kalam Technological University</p>
+                <p class="edu-year">2016 — 2020</p>
+                <div class="edu-highlights">
+                    <span class="edu-highlight">Thermodynamics</span>
+                    <span class="edu-highlight">Fluid Mechanics</span>
+                    <span class="edu-highlight">Material Science</span>
+                    <span class="edu-highlight">Manufacturing Process</span>
+                </div>
+            </div>
+
+            <!-- Certifications Card -->
+            <div class="education-card floating-island float-anim-4 physics-card reveal" id="card-certs">
+                <div class="card-accent accent-secondary"></div>
+                <div class="edu-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </div>
+                <h3 class="edu-degree">Professional Certifications</h3>
+                <p class="edu-field">Industry Qualifications</p>
+                <ul class="cert-list">
+                    <li>
+                        <span class="cert-name">QA/QC Inspector Certification</span>
+                        <span class="cert-org">CSWIP / BGAS-CSWIP</span>
+                    </li>
+                    <li>
+                        <span class="cert-name">NDT Level II</span>
+                        <span class="cert-org">ASNT</span>
+                    </li>
+                    <li>
+                        <span class="cert-name">ISO 9001:2015 Internal Auditor</span>
+                        <span class="cert-org">TÜV</span>
+                    </li>
+                    <li>
+                        <span class="cert-name">Coating Inspector Level I</span>
+                        <span class="cert-org">NACE / AMPP</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="footer">
+        <div class="footer-content floating-island float-anim-1">
+            <div class="footer-info">
+                <span class="footer-name">Alen Peter</span>
+                <span class="footer-divider">•</span>
+                <span class="footer-role">QA/QC Professional</span>
+            </div>
+            <p class="footer-tagline">Building quality, one inspection at a time.</p>
+            <div class="footer-links">
+                <a href="mailto:alenspeter@gmail.com" class="footer-link" id="footer-email">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span>Email</span>
+                </a>
+                <a href="https://linkedin.com/in/alenspeter" target="_blank" rel="noopener" class="footer-link" id="footer-linkedin">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+            <p class="footer-copyright">&copy; 2026 Alen Peter. Crafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
